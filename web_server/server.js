@@ -10,21 +10,11 @@
 'use strict';
 
 var express = require('express');
-var https = require('https');
-var pem = require('pem');
+var app = express();
+var port = process.env.PORT || 3000;
 
-pem.createCertificate({days: 1, selfSigned: true}, function(err, keys) {
-  var options = {
-    key: keys.serviceKey,
-    cert: keys.certificate
-  };
+app.use(express.static('../'));
 
-  var app = express();
-
-  app.use(express.static('../'));
-
-  // Create an HTTPS service.
-  https.createServer(options, app).listen(8080);
-
-  console.log('serving on https://localhost:8080');
+app.listen(port, function () {
+ console.log(`Example app listening on port !`);
 });

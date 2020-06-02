@@ -19,9 +19,10 @@
     "url": "https://github.com/webrtc/samples.git"
   },
   "scripts": {
-    "test": "gulp"
+    "test": "gulp",
+    "start": "node web_server/server.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.26.3",
     "babel-plugin-add-module-exports": "^1.0.2",
     "babel-preset-env": "^1.7.0",
@@ -47,6 +48,5 @@
     "selenium-server": "^3.141.59",
     "stylelint": "^10.1.0",
     "stylelint-config-recommended": "^2.2.0"
-  },
-  "dependencies": {}
+  }
 }
